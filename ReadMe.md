@@ -1,15 +1,21 @@
 # 🎲 Number Guessing Game
 
 Welcome to the **Number Guessing Game**!  
-Can you outsmart the computer and guess the lucky number between 0 and 10?  
+Can you outsmart the computer and guess the lucky number between **1 and 10**?  
 You have just **5 tries**—so make each guess count!
+
+---
+
+## 🌐 Live Demo
+
+Try it now: [Guess the Number Game](https://moses-dera.github.io/Guess-Number/)
 
 ---
 
 ## ✨ How to Play
 
-1. **Enter your guess** (a number from 0 to 10) in the input box.
-2. **Hit the Guess button** and see if you’re lucky!
+1. **Enter your guess** (a number from **1 to 10**) in the input box.
+2. **Hit the ENTER button** and see if you’re lucky!
 3. The game will give you hints:  
    - Too high?  
    - Too low?  

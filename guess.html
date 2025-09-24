@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guess.css">
+</head>
+<body>
+    <div class="main">
+        <div class="wrap">
+        <div class="title">
+            <p id="game-heading">Guess the number</p>
+            <p style="font-size: smaller;">From number (1-10), pick any number.</p>
+        </div>
+        <div class="trial-left">Trial left: <input type="number" style="font-family: luckiest guy;" class="trial_count" disabled></div> <br>
+        <input type="text" style="font-family: luckiest guy;" class="input_value">
+        <div class="enter_text">
+            Enter your number choice
+        </div>
+        <button style="font-family: luckiest guy;" class="action_btn" onclick="check_values()">
+            ENTER
+        </button>  
+
+    </div>
+    </div>
+    <script src="guess.js"></script>
+</body>
+</html>

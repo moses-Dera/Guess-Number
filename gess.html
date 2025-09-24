@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 30px; }
+    input { padding: 10px; margin: 10px; }
+    button { padding: 10px 20px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>🎲 Number Guessing Game</h1>
+  <p class="enter_text"></p>
+  
+  <input type="number" class="input_value" placeholder="Enter your guess">
+  <button class="action_btn">Guess</button>
+  
+  <p>Tries left: <span class="trial_count"></span></p>
+
+  <script>
+    const trial_count = document.querySelector(".trial_count");
+    let inputValue = document.querySelector('.input_value');
+    const action_btn = document.querySelector('.action_btn');
+    const enter_text = document.querySelector('.enter_text');
+
+    let tries = 5;
+    let computer_choice = Math.floor(Math.random() * 10) + 1;
+
+    trial_count.textContent = tries;
+    enter_text.textContent = "Enter a number from 1 to 10 to play";
+
+    function check_values() {
+        const userGuess = parseInt(inputValue.value);
+
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+            enter_text.textContent = "Input a number between 1 and 10 to play";
+            return;
+        }
+
+        if (userGuess === computer_choice) {
+            enter_text.textContent = "🎉 Congratulations! You got the lucky number!";
+            action_btn.textContent = "PlayAgain";
+        } else if (tries > 1) {
+            tries--;
+            trial_count.textContent = tries;
+            if (userGuess > computer_choice) {
+                enter_text.textContent = `The number ${userGuess} is too high. Try again! You have ${tries} tries left.`;
+            } else {
+                enter_text.textContent = `The number ${userGuess} is too low. Try again! You have ${tries} tries left.`;
+            }
+        } else {
+            tries = 0;
+            trial_count.textContent = tries;
+            enter_text.textContent = `Game over! The lucky number was ${computer_choice}.`;
+            action_btn.textContent = "PlayAgain";
+        }
+        inputValue.value = "";
+    }
